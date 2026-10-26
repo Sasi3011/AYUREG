@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ayureg
+      POSTGRES_PASSWORD: ayureg
+      POSTGRES_DB: ayureg
+    ports:
+      - "5432:5432"
+    volumes:
+      - ayureg_pgdata:/var/lib/postgresql/data
+
+volumes:
+  ayureg_pgdata:
